@@ -1,0 +1,8 @@
+java marker interface : like Serializable
+    public void writeObject(Object o) {
+       if(!(o instanceof Serializable)) {
+           throw new Exception()
+       }
+    }
+
+java customer annotation : use with reflection
