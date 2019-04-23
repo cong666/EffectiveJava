@@ -9,27 +9,38 @@ import java.util.List;
  * Date: 18/12/27 下午1:23
  */
 public class GenericTest {
+
     public void doInsert(List<Object> list) {
         list.add(new Dog());
     }
 
+    /**
+     *
+     * @param list can accept a list of all type
+     */
     public void doInsert2(List<?> list) {
         //list.add(new Dog());//compiler error , can not add any thing
-        //but we can use it to do a for cycle
         for(Object o : list) {
             Dog dog = (Dog)o;
             System.out.println(dog.getName());
         }
     }
 
+    /**
+     *
+     * @param list can accept a list of type which extends Animal
+     */
     public void doInsert3(List<? extends Animal> list) {
-        //list.add(new Dog());//compiler error can not add any thing
-        //but we can use it to do a for cycle
+        //list.add(new Dog());//compiler error, can not add any thing
         for(Animal d : list) {
             System.out.println(d.getName());
         }
     }
 
+    /**
+     *
+     * @param list can accept a list of type which is Dog's super class
+     */
     public void doInsert4(List<? super Dog> list) {
         list.add(new Dog());//can add dog
         for(Object o : list) {

@@ -60,6 +60,7 @@ public class EnumUseInterface {
 
     public static void main(String args[]) {
         EnumUseInterface e = new EnumUseInterface();
-        System.out.println(e.test(ExtendOperation.REMAINDER));
+        Operation op = ExtendOperation.REMAINDER;
+        System.out.println(e.test(op));
     }
 }
